@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %} {% block title %}Liste de personnages{% endblock
+%} {% block body %}
+<main>
+    <h1>Liste de personnages</h1>
+    <ul>
+        {% for character in characters %}
+        <li>
+            {{ character.firstname }} -- Famille :
+            {{ character.family ? character.family.name : "Aucune" }}
+            {# Même chose que : character.family.name ?? "Aucune" #}
+        </li>
+        {% endfor %}
+    </ul>
+</main>
+{% endblock %}
